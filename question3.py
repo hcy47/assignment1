@@ -4,7 +4,7 @@ age = int(input("How old is your pet in human years?"))
 pet_age = 0
 if pet == "dog" or pet == "cat":
   if age < 3 :
-    pet_age * 12
+    pet_age *= 12
   else:
     pet_age = 24
     age  = age - 2

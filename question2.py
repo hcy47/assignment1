@@ -11,16 +11,8 @@
 # Ask if they want a drink (+$2.50)
 # Calculate total with 8% tax
 # Display itemized bill
-# Create file: question2.py
-# Example Output:
 
 
-# === YOUR ORDER ===
-# Food: Pizza - $15.99
-# Drink: Yes - $2.50
-# Subtotal: $18.49
-# Tax (8%): $1.48
-# Total: $19.97
 
 
 
@@ -33,37 +25,41 @@ print("4. Pizza - $13.75\n")
 
 choice = int(input("Please selecet between (1-4) "))
 
-
-
 if choice == 1 :
   cost = 15.99
-  food = print(f"Food: Pizza - $15.99")
+  food = "Food: Pizza - $15.99"
 elif choice == 2 :
   cost = 12.50
-  food = print(f"Food: Burger - $12.50")
+  food ="Food: Burger - $12.50"
 elif choice == 3 :
   cost = 9.99
-  food = print(f"Food: Salad - $9.99")
+  food = "Food: Salad - $9.99"
 elif choice == 4 :
   cost = 13.75
-  food = print("Pasta - $13.75")
+  food = "Pasta - $13.75"
 else:
   print(f"Please select betweeen 1-4")
 
 
 drink = input("Woul you like a drink? ($2.50) (yes/no): ")
-subtotal = cost + 2.50
-tax = .08
-cost = subtotal + tax
 
 print("===Your Order===\n")
 if drink =="yes" :
+  subtotal = cost + 2.50
+  tax = subtotal * .08
   print(f"Food: {food}")
   print(f"Drink: Yes - $2.50")
-  print(f"Tax (8%): ${((subtotal) * .08):.2f}")
-  print(f"Subtotal: ${(cost + 2.50)}")
-  
-  print(f"Total: {(cost + tax) * tax:.2f}")
+  print(f"Tax (8%): ${tax:.2f}")
+  print(f"Subtotal: ${subtotal}")
+  print(f"Total: {subtotal + tax:.2f}")
+else:
+  tax = .08 * cost
+  print(f"Food: {food}")
+  print(f"Drink: No")
+  print(f"Tax (8%): ${tax:.2f}")
+  print(f"Subtotal: ${cost}")
+  print(f"Total: {cost + tax:.2f}")
+
 
 
 
